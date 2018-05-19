@@ -1,2 +1,4 @@
-# meshstream
-Live video stream over a distributed file system over a physical mesh network
+meshstream
+==========
+
+This project explores the user experience of sharing a live video stream over a mesh network that features content-addressable storage and long-distance wireless links.
