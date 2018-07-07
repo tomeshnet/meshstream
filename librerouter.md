@@ -21,9 +21,9 @@ Build image using
 ./cooker -c ar71xx/generic --flavor=lime_default --profile=librerouter-v1
 ```
 
-## Compile LEDE 
+## Compile LEDE
 
-`dnsmasq` will not build.  Edit `flavours.conf` and change the `led_vanilla` line to 
+`dnsmasq` will not build.  Edit `flavours.conf` and change the `led_vanilla` line to
 ```
 lede_vanilla="-dnsmasq"
 ```
@@ -38,7 +38,7 @@ The files will be placed in `/home/nicolas/OS_projects/lime-sdk-LR/output/ar71xx
 
 The out put folde will have these files of interest
 
-|File endin in                                         | Function                |
+|File ending in                                        | Function                |
 |:-----------------------------------------------------|:------------------------|
 |ar71xx-generic-librerouter-v1-squashfs-sysupgrade.bin | Bin used for sysupgrade |
 |ar71xx-generic-root.squashfs                          | Root file system        |
@@ -48,7 +48,7 @@ The out put folde will have these files of interest
 
 ## First flash from factory
 
-To be able to boot the image successfully you will need to change a paramter in U-Boot. From factory bootargs are set to `bootargs=console=ttyS0,115200 root=31:02 rootfstype=squashfs init=/sbin/init mtdparts=ath-nor0:256k(u-boot),64k(u-boot-env),6336k(rootfs),1408k(uImage),8256k(mib0),64k(ART)`
+To be able to boot the image successfully you will need to change a parameter in U-Boot. From factory `bootargs` are set to `bootargs=console=ttyS0,115200 root=31:02 rootfstype=squashfs init=/sbin/init mtdparts=ath-nor0:256k(u-boot),64k(u-boot-env),6336k(rootfs),1408k(uImage),8256k(mib0),64k(ART)`
 
 To set them correctly enter the following at the U-Boot `ath>` prompt
 ** See U-Boot section below for more information**
@@ -60,11 +60,11 @@ savenev
 
 
 ## Sysupgrade
-Currently unable to flash stabley
+Currently unable to flash that will work beyond a single reboot.
 
 ## U-Boot
 
-This method seems to create a stable flash. It requires you to flash two seperate sections, the Kernel and the rootfs. 
+This method seems to create a stable flash. It requires you to flash two separate sections, the Kernel and the rootfs.
 
 To use this method you must first prepare a computer/device that will hold the required files. Configure the computer as follows
 
@@ -100,7 +100,7 @@ Or you can just boot using
 boot
 ```
 
-## Flashing - Explentation
+## Flashing - Exploitation
 
 Flashing is done with these 3 commands
 
@@ -141,13 +141,13 @@ cp.b is a binary copy from one memory location to another
 Device will boot with the default IP address of 192.168.1.1
 
 
-## Connect device to internet 
+## Connect device to Internet
 
 ### CLI
 
 Set an ip address on your lan using
 ``
-ifconfig br-lan 192.168.x.x 
+ifconfig br-lan 192.168.x.x
 ```
 
 Set the gateway of your lan using
@@ -155,7 +155,7 @@ Set the gateway of your lan using
 route add -net 0.0.0.0 gw 192.168.x.x
 ```
 
-Set the DNS server of your lan using
+Set the DNS server of your LAN using
 ```
 echo nameserver 8.8.8.8 > /etc/resolv.conf
 ```
@@ -164,7 +164,7 @@ echo nameserver 8.8.8.8 > /etc/resolv.conf
 
 Edit the  `/etc/config/network` file. Under `lan` interface
 
-Set your `ipaddr`  and add 
+Set your `ipaddr`  and add
 ```
 option gateway '192.168.40.1
 option dns '8.8.8.8'
@@ -190,7 +190,7 @@ Reboot to take effect.
 
 Default address is 10.13.0.1. Connect to the WiFi is the easiest way to access.
 
-LuCI is pritty borken on LibreMesh
+LuCI is pretty broken on LibreMesh
 
 
 # U-Boot
@@ -211,11 +211,12 @@ Set your serial port to baud 115200
 
 ## Entering U-Boot
 
-Durring the boot process you will be notified to press any key. This delay is usualy 3 second.  Simply press any key.  If the boot failes it will automatically go into U-Boot.
+During the boot process you will be notified to press any key. This delay is usually 3 second.  Simply press any key.  If the boot failed it will automatically go into U-Boot.
 
 ## Entering commands
 
 Few things to note when entering U-Boot commands
-* Enter command exacly. You risk Bricking the board (making it impossible, or nearly impossible, to recover the device)
-* U-Boot is very sensative, an extra leading whitespace will make a command not work.
+* Enter command exactly. You risk Bricking the board (making it impossible, or nearly impossible, to recover the device)
+* U-Boot is very sensitive, an extra leading whitespace will make a command not work.
 * Do not copy and paste multiple lines, it will not work. One line at a time.
+
