@@ -135,6 +135,20 @@ cp.b is a binary copy from one memory location to another
 * Do not cold boot with serial connected. It will not work
 * 2.4 ghz is broken. Seems to work ok for a very local access poing but thats about it.
 
+# Fix Fake Mac Addresses
+
+Run the following in a console to generate new ip addresses for all wireless and physical interfaces.
+```
+rand4bytes=$(head -c 256 /dev/urandom | md5sum | sed 's/\(..\)/\1:/g' | head -c 11)
+
+uci set network.lan.macaddr="02:$rand4bytes":10
+uci commit network
+
+for index in 0 1 2; do
+uci set wireless.radio$index.macaddr="02:$rand4bytes":5$index
+done
+```
+
 # OpenWRT/LEDE
 
 
