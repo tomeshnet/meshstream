@@ -36,7 +36,7 @@ Build image using
 
 The files will be placed in `/home/nicolas/OS_projects/lime-sdk-LR/output/ar71xx/generic/librerouter-v1`. There will be a folder for each "flavour".
 
-The out put folde will have these files of interest
+The output folder will have these files of interest
 
 |File ending in                                        | Function                |
 |:-----------------------------------------------------|:------------------------|
@@ -50,17 +50,20 @@ The out put folde will have these files of interest
 
 To be able to boot the image successfully you will need to change a parameter in U-Boot. From factory `bootargs` are set to `bootargs=console=ttyS0,115200 root=31:02 rootfstype=squashfs init=/sbin/init mtdparts=ath-nor0:256k(u-boot),64k(u-boot-env),6336k(rootfs),1408k(uImage),8256k(mib0),64k(ART)`
 
-To set them correctly enter the following at the U-Boot `ath>` prompt
-** See U-Boot section below for more information**
+To set this paramater you will need to  enter the following at the U-Boot `ath>` prompt
+*See U-Boot section below for more information*
 
 ```
 setenv bootargs "board=LIBREROUTERV1 console=ttyS0,115200"
 savenev
 ```
 
-
 ## Sysupgrade
 Currently unable to flash that will work beyond a single reboot.
+
+`sysupgrade img.bin`
+or
+`sysupgrade -F img.bin`
 
 ## U-Boot
 
