@@ -134,7 +134,7 @@ cp.b is a binary copy from one memory location to another
 
 # General Notes
 
-* `eth0` does not seem to work. It may be connected directly to a WAN port that does not seem to be on the board. You want to do everything on `eth0`
+* `eth0` does not seem to work. It may be connected directly to a WAN port that does not seem to be on the board. You want to do everything on `eth1`
 * Do not cold boot with serial connected. It will not work
 * 2.4 ghz is broken. Seems to work ok for a very local access poing but thats about it.
 
