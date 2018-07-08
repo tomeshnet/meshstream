@@ -224,6 +224,8 @@ Header J4
 ```
 Set your serial port to baud 115200
 
+![Serial connection on LibreRouter v1](image.png?raw=true)
+
 ** Note: You cannot have the dongle connected when powering the LibreRouter on. You must disconnected for the first few seconds of cold boot **
 
 ## Entering U-Boot
