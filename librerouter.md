@@ -5,7 +5,6 @@ Compile requires a special SDK and specific paths to be observed.
 ## Prepare the build
 
 ```
-wget http://blog.altermundi.net/media/uploads/lime-sdk-LR.tar.bz
 mkdir -p  /home/nicolas/OS_projects/lime-sdk-LR
 cd /home/nicolas/OS_projects
 wget http://blog.altermundi.net/media/uploads/lime-sdk-LR.tar.bz
@@ -30,7 +29,7 @@ lede_vanilla="-dnsmasq"
 
 Build image using
 ```
-./cooker -c ar71xx/generic --flavor=LEDE-vanilla --profile=librerouter-v1
+./cooker -c ar71xx/generic --flavor=lede-vanilla --profile=librerouter-v1
 ```
 ## Output
 
