@@ -10,7 +10,8 @@ cd /home/nicolas/OS_projects
 wget http://blog.altermundi.net/media/uploads/lime-sdk-LR.tar.bz
 tar xvf lime-sdk-LR.tar.bz
 cd lime-sdk-LR
-./cooker --update-communities --update-feeds
+# This seems to break things now so comment
+# ./cooker --update-communities --update-feeds
 ./cooker -b ar71xx/generic
 ```
 
@@ -29,7 +30,7 @@ lede_vanilla="-dnsmasq"
 
 Build image using
 ```
-./cooker -c ar71xx/generic --flavor=lede-vanilla --profile=librerouter-v1
+./cooker -c ar71xx/generic --flavor=lede_vanilla --profile=librerouter-v1
 ```
 ## Output
 
