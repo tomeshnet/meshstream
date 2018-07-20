@@ -4,14 +4,19 @@ Compile requires a special SDK and specific paths to be observed.
 
 ## Prepare the build
 
+***Prerequisites***
+```
+apt-get install subversion
+```
+
 ```
 mkdir -p  /home/nicolas/OS_projects/lime-sdk-LR
 cd /home/nicolas/OS_projects
 wget http://blog.altermundi.net/media/uploads/lime-sdk-LR.tar.bz
 tar xvf lime-sdk-LR.tar.bz
 cd lime-sdk-LR
-# This seems to break things now so comment
-# ./cooker --update-communities --update-feeds
+rm -rf communities
+./cooker --update-communities --update-feeds
 ./cooker -b ar71xx/generic
 ```
 
@@ -32,6 +37,9 @@ Build image using
 ```
 ./cooker -c ar71xx/generic --flavor=lede_vanilla --profile=librerouter-v1
 ```
+
+**PROTIP** compile with env variables ` J=1 V=s` for debugging info
+
 ## Output
 
 The files will be placed in `/home/nicolas/OS_projects/lime-sdk-LR/output/ar71xx/generic/librerouter-v1`. There will be a folder for each "flavour".
