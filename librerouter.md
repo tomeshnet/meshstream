@@ -63,14 +63,16 @@ To set this paramater you will need to  enter the following at the U-Boot `ath>`
 
 ```
 setenv bootargs "board=LIBREROUTERV1 console=ttyS0,115200"
-savenev
+saveenv
 ```
 
 ## Sysupgrade
 Currently unable to flash that will work beyond a single reboot.
 
 `sysupgrade img.bin`
+
 or
+
 `sysupgrade -F img.bin`
 
 ## U-Boot
@@ -105,7 +107,8 @@ To reboot from U-Boot enter
 reset
 ```
 
-Or you can just boot using
+*Or* 
+you can just boot using
 
 ```
 boot
@@ -162,16 +165,18 @@ done
 
 # OpenWRT/LEDE
 
-
 Device will boot with the default IP address of 192.168.1.1
 
+Full config script found here
+
+https://github.com/tomeshnet/meshstream/issues/9
 
 ## Connect device to Internet
 
 ### CLI
 
 Set an ip address on your lan using
-``
+```
 ifconfig br-lan 192.168.x.x
 ```
 
