@@ -1,0 +1,55 @@
+html, body {
+	maring:0;
+	padding:0;
+	
+}
+.TopMenu {
+	background-color: #101935;
+	display: block;
+}
+.TopMenu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+.TopMenu li {
+	vertical-align: middle;
+	display: inline-block;
+	margin:0;
+	padding:0;
+	text-align: center;
+}
+.TopMenu li a {
+	height:45px;	
+	display: block;
+	padding: 10px;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-decoration:none;
+	font-size:16px;
+}
+.TopMenu li a:hover {
+	background-color: #252d47;
+	color: #FFF;
+}
+/*Login/Create Forms*/
+.login {
+	border: 1px solid blue;
+	display:block;
+	width:300px;
+	margin:0 auto;
+	padding:20px;
+	background:#D9ECFF;
+}
+.login h1 {
+	padding:0;
+	margin-top:0;
+	font-family:Arial, Helvetica, sans-serif;	
+}
+.login .textbox {
+	padding:5px;
+	margin:5px;
+	border:none;
+}
