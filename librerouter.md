@@ -244,3 +244,22 @@ Few things to note when entering U-Boot commands:
 * Enter commands exactly. You risk bricking the board (making it impossible, or nearly impossible, to recover the device)
 * U-Boot is very sensitive, an extra leading whitespace will make a command fail
 * Do not copy and paste multiple lines, it will not work. One line at a time
+
+# Appendix
+
+Instructions that are supposed to work
+
+Update U-Boot (seems to work ok)
+
+```
+tftp 82000000 openwrt-blah-uboot-bin
+erase 1:0-4
+cp.b 0x82000000 0x9f000000 0x30000
+```
+
+Flash sysupgrade (may be working needs confirmation)
+```
+tftp 82000000 openwrt-blah-sysupgrade.bin
+erase 0x9f050000 +$filesize
+cp.b 0x82000000 0x9f050000 $filesize
+```
